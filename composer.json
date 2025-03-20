@@ -1,0 +1,29 @@
+{
+  "name": "mistynetwork/discordwebhookapi",
+  "description": "Simple discord webhook virion for PocketMine-MP",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "reacherurmom",
+      "email": "reacherurmom@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "reacherurmom\\discordwebhookapi\\": "src"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/NetherGamesMC/libasynCurl"
+    }
+  ],
+  "require-dev": {
+    "nethergamesmc/libasyncurl": "dev-pm5"
+  },
+  "require": {
+    "php": "^8.2"
+  }
+}
