@@ -10,6 +10,8 @@ final class Message {
 	private ?string $description = null;
 	private ?string $avatar = null;
 
+	private bool $textToSpeech = false;
+
 	/** @var array<Embed> */
 	private array $embeds = [];
 
@@ -32,13 +34,20 @@ final class Message {
 		return $this;
 	}
 
+	public function setTextToSpeech(bool $textToSpeech) : self {
+		$this->textToSpeech = $textToSpeech;
+		return $this;
+	}
+
 	public function addEmbed(Embed $embed) : self {
 		$this->embeds[] = $embed;
 		return $this;
 	}
 
 	public function serialize() : array {
-		$data = [];
+		$data = [
+			'tts' => $this->textToSpeech
+		];
 
 		if ($this->username !== null) $data['username'] = $this->username;
 		if ($this->description !== null) $data['description'] = $this->description;
