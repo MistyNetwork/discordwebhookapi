@@ -2,6 +2,7 @@
   "name": "mistynetwork/discordwebhookapi",
   "description": "Simple discord webhook virion for PocketMine-MP",
   "minimum-stability": "dev",
+  "type": "library",
   "license": "proprietary",
   "authors": [
     {
@@ -10,8 +11,8 @@
     }
   ],
   "autoload": {
-    "psr-0": {
-      "reacherurmom\\discordwebhookapi\\": "src"
+    "psr-4": {
+      "reacherurmom\\discordwebhookapi\\": "src/reacherurmom/discordwebhookapi"
     }
   },
   "repositories": [
