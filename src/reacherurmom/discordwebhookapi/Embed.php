@@ -12,7 +12,7 @@ final class Embed {
 
 	private ?string $description = null;
 	private ?string $url = null;
-	private ?string $color = null;
+	private ?int $color = null;
 
 	private ?string $thumbnail = null;
 	private ?string $image = null;
@@ -47,7 +47,7 @@ final class Embed {
 		return $this;
 	}
 
-	public function setColor(?string $color) : self {
+	public function setColor(?int $color) : self {
 		$this->color = $color;
 		return $this;
 	}

@@ -43,10 +43,9 @@ $message = Message::create()
 ```php
 use reacherurmom\discordwebhookapi\Embed;
 
-$embed = Embed::create()
-    ->setTitle("Embed Title")
+$embed = Embed::create("Embed Title")
     ->setDescription("This is an embedded message.")
-    ->setColor(0x00FF00);
+    ->setColor(hexdec('ffffff'));
 
 $message->addEmbed($embed);
 ```
@@ -60,7 +59,7 @@ use reacherurmom\discordwebhookapi\component\Field;
 
 $embed->setFooter(Footer::create("Footer Text", "https://example.com/footer.png"))
       ->setAuthor(Author::create("Author Name", "https://example.com/author.png"))
-      ->setTimestamp(time())
+      ->setTimestamp(new \DateTime('now')->setTimezone('UTC'))
       ->setThumbnail("https://example.com/thumbnail.png")
       ->addField(Field::create("Field 1", "Value of field 1", true))
       ->addField(Field::create("Field 2", "Value of field 2", false));
@@ -81,7 +80,7 @@ DiscordWebhookAPI::create($webhook, $message)->send();
 
 ## 🙌 Credits
 
-- [JuqnGOOOD](https://github.com/JkqzDev)
+- [JuqnGOOD](https://github.com/JkqzDev)
 - [CortexPE](https://github.com/CortexPE/DiscordWebhookAPI)
 
 ---
