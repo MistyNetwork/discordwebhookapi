@@ -26,6 +26,7 @@
   },
   "require": {
     "php": "^8.2",
+    "sof3/await-generator": "^3.6.1",
     "pocketmine/pocketmine-mp": "^5.25.2"
   }
 }

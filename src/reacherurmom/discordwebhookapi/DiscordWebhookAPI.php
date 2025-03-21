@@ -8,6 +8,7 @@ use libasynCurl\Curl;
 use pocketmine\plugin\PluginBase;
 use pocketmine\Server;
 use pocketmine\utils\InternetRequestResult;
+use SOFe\AwaitGenerator\Await;
 
 final class DiscordWebhookAPI {
 
@@ -52,5 +53,22 @@ final class DiscordWebhookAPI {
 				}
 			}
 		);
+	}
+
+	public function sendAsync() : \Generator {
+		return Await::promise(fn(callable $resolve, callable $reject) => Curl::postRequest(
+			page: $this->url,
+			args: $this->message->serialize(),
+			headers: [
+				'Content-Type: application/json',
+			],
+			closure: static function (?InternetRequestResult $result) use ($resolve, $reject): void {
+				if ($result !== null && !in_array($result->getCode(), [200, 204])) {
+					$resolve(true);
+				} else {
+					$reject(throw new \RuntimeException('Error to send discord message. (code=' . $result?->getCode() . ')'));
+				}
+			}
+		));
 	}
 }
