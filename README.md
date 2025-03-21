@@ -81,7 +81,7 @@ DiscordWebhookAPI::create($webhook, $message)->send();
 
 ## 🙌 Credits
 
-- [JuqnGOOOD]((https://github.com/JkqzDev)
+- [JuqnGOOOD](https://github.com/JkqzDev)
 - [CortexPE](https://github.com/CortexPE/DiscordWebhookAPI)
 
 ---
