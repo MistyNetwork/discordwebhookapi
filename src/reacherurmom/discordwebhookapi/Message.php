@@ -7,7 +7,7 @@ namespace reacherurmom\discordwebhookapi;
 final class Message {
 
 	private ?string $username = null;
-	private ?string $description = null;
+	private ?string $content = null;
 	private ?string $avatar = null;
 
 	private bool $textToSpeech = false;
@@ -24,8 +24,8 @@ final class Message {
 		return $this;
 	}
 
-	public function setDescription(?string $description) : self {
-		$this->description = $description;
+	public function setContent(?string $content) : self {
+		$this->content = $content;
 		return $this;
 	}
 
@@ -50,7 +50,7 @@ final class Message {
 		];
 
 		if ($this->username !== null) $data['username'] = $this->username;
-		if ($this->description !== null) $data['description'] = $this->description;
+		if ($this->content !== null) $data['content'] = $this->content;
 		if ($this->avatar !== null) $data['avatar_url'] = $this->avatar;
 		if (count($this->embeds) > 0) $data['embeds'] = array_map(fn(Embed $embed) => $embed->serialize(), $this->embeds);
 		return $data;
