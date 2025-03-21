@@ -22,6 +22,10 @@ final class DiscordWebhookAPI {
 		if (self::$registered === null) {
 			throw new \RuntimeException('Library not registered.');
 		}
+
+		if (!filter_var($url, FILTER_VALIDATE_URL)) {
+			throw new \RuntimeException('Webhook URL is not valid.');
+		}
 		return new self($url, $message);
 	}
 
