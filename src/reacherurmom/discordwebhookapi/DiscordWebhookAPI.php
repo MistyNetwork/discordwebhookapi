@@ -56,7 +56,7 @@ final class DiscordWebhookAPI {
 	}
 
 	public function sendAsync() : \Generator {
-		return Await::promise(fn(callable $resolve, callable $reject) => Curl::postRequest(
+		return yield Await::promise(fn(callable $resolve, callable $reject) => Curl::postRequest(
 			page: $this->url,
 			args: $this->message->serialize(),
 			headers: [
