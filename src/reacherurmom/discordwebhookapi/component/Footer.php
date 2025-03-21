@@ -26,9 +26,11 @@ final class Footer {
 	}
 
 	public function serialize() : array {
-		return [
+		$data = [
 			'text' => $this->text,
-			'icon' => $this->icon ?? '',
 		];
+		
+		if ($this->icon !== null) $data['icon_url'] = $this->icon;
+		return $data;
 	}
 }
