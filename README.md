@@ -90,7 +90,7 @@ DiscordWebhookAPI::create($webhook, $message)->send();
 You can install this API using **Composer**:
 
 ```sh
-composer require reacherurmom/discordwebhookapi
+composer require mistynetwork/discordwebhookapi
 ```
 
 ---
