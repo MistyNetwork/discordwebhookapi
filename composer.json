@@ -22,10 +22,16 @@
     }
   ],
   "require-dev": {
-    "nethergamesmc/libasyncurl": "dev-pm5"
-  },
-  "require": {
     "php": "^8.2",
     "pocketmine/pocketmine-mp": "^5.25.2"
+  },
+  "require": {
+    "nethergamesmc/libasyncurl": "dev-pm5"
+  },
+  "extra": {
+    "virion": {
+      "spec": "3.0",
+      "namespace-root": "reacherurmom\\discordwebhookapi"
+    }
   }
 }
